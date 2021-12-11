@@ -3,16 +3,22 @@ package per.aniao.eatwell
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Create
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import dagger.hilt.android.AndroidEntryPoint
 import per.aniao.eatwell.ui.theme.EatwellTheme
+import per.aniao.eatwell.ui.theme.Purple200
+import per.aniao.eatwell.viewmodel.FoodViewModel
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val vm: FoodViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -22,10 +28,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    BottomAppBar(backgroundColor = Purple200) {
+                        IconButton(onClick = {}) {
+                            Icon(imageVector = Icons.Outlined.Create, "Create")
+                        }
+                    }
                 }
             }
         }
+
     }
 }
 
@@ -38,6 +49,15 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     EatwellTheme {
-        Greeting("Android")
+//        Surface(
+//            modifier = Modifier.fillMaxSize(),
+//            color = MaterialTheme.colors.background
+//        ) {
+        BottomAppBar(backgroundColor = Purple200) {
+            IconButton(onClick = {}) {
+                Icon(imageVector = Icons.Outlined.Create, "Create")
+            }
+        }
+//        }
     }
 }
