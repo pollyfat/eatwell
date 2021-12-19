@@ -19,11 +19,10 @@ class MApp: Application() {
     override fun onCreate() {
         super.onCreate()
 
-        thread {
-            val appId = AGConnectOptionsBuilder().build(this).getString("client/app_id")
-            val pushToken = HmsInstanceId.getInstance(this).getToken(appId, "HCM")
-            println("HW GEN PUSH TOKEN: $pushToken")
-            Toast.makeText(this, pushToken, Toast.LENGTH_SHORT).show()
-        }
+//        thread {
+//            val appId = AGConnectOptionsBuilder().build(this).getString("client/app_id")
+//            val pushToken = HmsInstanceId.getInstance(this).getToken(appId, "HCM")
+//            println("HW GEN PUSH TOKEN: $pushToken")
+//        }
     }
 }

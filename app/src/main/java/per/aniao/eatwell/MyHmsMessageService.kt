@@ -20,10 +20,6 @@ class MyHmsMessageService : HmsMessageService() {
         super.onNewToken(p0, p1)
         println("HW PUSH TOKEN: ->$p0")
         println("HW PUSH Bundle: ->$p1")
-//        thread {
-//            val newT = HmsInstanceId.getInstance(this).getToken(p0)
-//            println("HW NEW PUSH TOKEN: ->$newT")
-//        }
     }
 
     override fun onNewToken(p0: String?) {

@@ -23,41 +23,10 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             EatwellTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    BottomAppBar(backgroundColor = Purple200) {
-                        IconButton(onClick = {}) {
-                            Icon(imageVector = Icons.Outlined.Create, "Create")
-                        }
-                    }
+                Scaffold() {
+                    
                 }
             }
         }
-
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    EatwellTheme {
-//        Surface(
-//            modifier = Modifier.fillMaxSize(),
-//            color = MaterialTheme.colors.background
-//        ) {
-        BottomAppBar(backgroundColor = Purple200) {
-            IconButton(onClick = {}) {
-                Icon(imageVector = Icons.Outlined.Create, "Create")
-            }
-        }
-//        }
     }
 }
