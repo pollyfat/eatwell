@@ -1,6 +1,7 @@
 package per.aniao.eatwell.widget
 
 import androidx.compose.runtime.Composable
+import per.aniao.eatwell.bean.Food
 
 /**
  *
@@ -10,6 +11,8 @@ import androidx.compose.runtime.Composable
  *
  */
 @Composable
-fun FoodList() {
+fun FoodList(food: List<Food>) {
+    food.forEach {
 
+    }
 }
